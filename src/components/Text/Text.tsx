@@ -66,7 +66,7 @@ const Text = (props: TextProps) => {
   return (
     <p
       className={twMerge(
-        "text-white tracking-wide",
+        "text-white",
         className,
         TEXT_VARIANT[variant]
       )}
