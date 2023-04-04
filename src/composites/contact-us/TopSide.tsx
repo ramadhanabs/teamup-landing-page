@@ -46,7 +46,7 @@ const TopSide = () => {
           />
         </div>
         <div className="border-y border-grey-light py-6 flex items-center w-full justify-between">
-          <div className="flex-col md:flex-row md:items-center gap-6">
+          <div className="flex flex-col md:flex-row md:items-center gap-6">
             <img src="/images/illustrations/email.png" className="w-[68px]" />
             <div>
               <Text variant="h6-medium">Email</Text>

@@ -20,9 +20,9 @@ const Collaboration = () => {
             Become Partner
           </Text>
           <Text variant="h6-regular">
-            Become a partner to enable us complement each other's services and
-            business fields that we are currently in, by collaborating we can go
-            further together to achieve our respective business goals.
+            Become a partner to enable us complement each other&apos;s services
+            and business fields that we are currently in, by collaborating we
+            can go further together to achieve our respective business goals.
           </Text>
         </div>
         <div className="shrink-0 flex justify-end md:justify-start">

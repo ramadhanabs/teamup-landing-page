@@ -18,7 +18,7 @@ const OurClients = () => {
       {CLIENTS.map(name => {
         if (name === "others") {
           return (
-            <div className="border border-grey-light flex items-center justify-center rounded-lg w-full h-full md:w-[290px] md:h-[160px]">
+            <div className="border border-grey-light flex items-center justify-center rounded-lg w-full h-full md:w-[290px] md:h-[160px]" key={name}>
               <Text variant="p-regular">
                 And dozen of
                 <br />

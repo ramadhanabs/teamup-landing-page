@@ -120,7 +120,7 @@ const ContactForm = () => {
                 0/100
               </Text>
             </div>
-            <div className="flex flex-col md:items-center md:justify-between mt-6 gap-6">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between mt-6 gap-6">
               <Text variant="h6-regular">
                 We will review it carefully and give the best proposal for you
               </Text>
