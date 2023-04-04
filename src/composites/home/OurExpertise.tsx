@@ -47,9 +47,9 @@ const OurExpertise = () => {
       {EXPERTISE.map(item => (
         <div
           key={item.id}
-          className="flex items-center justify-between border-b border-grey-light py-10"
+          className="flex flex-col md:flex-row md:items-center justify-between border-b border-grey-light py-10"
         >
-          <div className="flex items-center gap-10">
+          <div className="flex flex-col md:flex-row md:items-center gap-10">
             <img
               src={`/images/illustrations/${item.id}.png`}
               className="w-[80px]"

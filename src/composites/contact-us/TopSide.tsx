@@ -5,7 +5,7 @@ import React from "react";
 
 const TopSide = () => {
   return (
-    <div className="grid grid-cols-2 gap-10">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
       <div>
         <Text variant="h2-medium" className="mb-4">
           Chat us the way
@@ -27,12 +27,12 @@ const TopSide = () => {
             <p className="text-white font-bold">Weekdays at 10 to 5</p>
           </div>
         </div>
-        <Text variant="h5-regular" className="h-[320px]">
+        <Text variant="h5-regular" className="md:h-[320px]">
           Perum Berlian Asri, Jl. Merpati Gg. Beo No.B5, Tempelan, Banguntapan,
           Kec. Banguntapan, Kabupaten Bantul, Daerah Istimewa Yogyakarta 55198
         </Text>
         <div className="border-y border-grey-light py-6 flex items-center w-full justify-between">
-          <div className="flex items-center gap-6">
+          <div className="flex flex-col md:flex-row md:items-center gap-6">
             <img src="/images/illustrations/call.png" className="w-[68px]" />
             <div>
               <Text variant="h6-medium">Phone</Text>
@@ -46,7 +46,7 @@ const TopSide = () => {
           />
         </div>
         <div className="border-y border-grey-light py-6 flex items-center w-full justify-between">
-          <div className="flex items-center gap-6">
+          <div className="flex-col md:flex-row md:items-center gap-6">
             <img src="/images/illustrations/email.png" className="w-[68px]" />
             <div>
               <Text variant="h6-medium">Email</Text>

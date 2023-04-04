@@ -11,7 +11,7 @@ const ContactForm = () => {
       </Text>
       <form>
         <div className="flex gap-10 mb-10">
-          <Text variant="h3-semibold" className="text-tosca">
+          <Text variant="h3-semibold" className="text-tosca hidden md:block">
             01
           </Text>
           <div className="w-full">
@@ -27,7 +27,7 @@ const ContactForm = () => {
           </div>
         </div>
         <div className="flex gap-10 mb-10">
-          <Text variant="h3-semibold" className="text-white">
+          <Text variant="h3-semibold" className="text-white hidden md:block">
             02
           </Text>
           <div className="w-full">
@@ -44,7 +44,7 @@ const ContactForm = () => {
           </div>
         </div>
         <div className="flex gap-10 mb-10">
-          <Text variant="h3-semibold" className="text-white">
+          <Text variant="h3-semibold" className="text-white hidden md:block">
             03
           </Text>
           <div className="w-full">
@@ -61,7 +61,7 @@ const ContactForm = () => {
           </div>
         </div>
         <div className="flex gap-10 mb-10">
-          <Text variant="h3-semibold" className="text-white">
+          <Text variant="h3-semibold" className="text-white hidden md:block">
             04
           </Text>
           <div className="w-full">
@@ -77,7 +77,7 @@ const ContactForm = () => {
           </div>
         </div>
         <div className="flex gap-10 mb-10">
-          <Text variant="h3-semibold" className="text-white">
+          <Text variant="h3-semibold" className="text-white hidden md:block">
             05
           </Text>
           <div className="w-full">
@@ -99,7 +99,7 @@ const ContactForm = () => {
           </div>
         </div>
         <div className="flex gap-10 mb-10">
-          <Text variant="h3-semibold" className="text-white">
+          <Text variant="h3-semibold" className="text-white hidden md:block">
             06
           </Text>
           <div className="w-full">
@@ -120,7 +120,7 @@ const ContactForm = () => {
                 0/100
               </Text>
             </div>
-            <div className="flex items-center justify-between mt-6">
+            <div className="flex flex-col md:items-center md:justify-between mt-6 gap-6">
               <Text variant="h6-regular">
                 We will review it carefully and give the best proposal for you
               </Text>

@@ -50,56 +50,73 @@ const OurProject = () => {
   return (
     <div className="mb-[80px]">
       <Text variant="h4-medium">Our Project</Text>
-      {PROJECT.map(item => (
-        <div className="py-10 border-b border-grey-light" key={item.id}>
-          {item.isThumbnail ? (
-            <div>
-              <img src={item.banner} className="w-full mb-10 rounded-lg" />
-              <div className="flex items-center justify-between">
-                <div className="flex gap-10">
-                  <Text variant="h3-medium">{item.id}</Text>
+      {/* Desktop */}
+      <div className="hidden md:block">
+        {PROJECT.map(item => (
+          <div className="py-10 border-b border-grey-light" key={item.id}>
+            {item.isThumbnail ? (
+              <div>
+                <img src={item.banner} className="w-full mb-10 rounded-lg" />
+                <div className="flex items-center justify-between">
+                  <div className="flex gap-10">
+                    <Text variant="h3-medium">{item.id}</Text>
+                    <div>
+                      <Text variant="h6-regular" className="mb-2">
+                        {item.category}
+                      </Text>
+                      <Text variant="h4-medium" className="max-w-[500px]">
+                        {item.title}
+                      </Text>
+                    </div>
+                    <Text variant="p-regular" className="max-w-[400px]">
+                      {item.description}
+                    </Text>
+                  </div>
+                  <div className="shrink-0">
+                    <Button
+                      variant="circle"
+                      icon={<ArrowOutward className="w-6 h-6 text-white" />}
+                    />
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div className="flex items-center gap-10">
+                <Text variant="h3-medium">{item.id}</Text>
+                <img src={item.banner} className="w-[450px] rounded-lg" />
+                <div className="flex flex-col justify-between gap-10">
                   <div>
                     <Text variant="h6-regular" className="mb-2">
                       {item.category}
                     </Text>
-                    <Text variant="h4-medium" className="max-w-[500px]">
-                      {item.title}
-                    </Text>
+                    <Text variant="h4-medium">{item.title}</Text>
                   </div>
-                  <Text variant="p-regular" className="max-w-[400px]">
-                    {item.description}
-                  </Text>
-                </div>
-                <div className="shrink-0">
-                  <Button
-                    variant="circle"
-                    icon={<ArrowOutward className="w-6 h-6 text-white" />}
-                  />
+                  <div className="flex justify-end">
+                    <Button
+                      variant="circle"
+                      icon={<ArrowOutward className="w-6 h-6 text-white" />}
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
-          ) : (
-            <div className="flex items-center gap-10">
-              <Text variant="h3-medium">{item.id}</Text>
-              <img src={item.banner} className="w-[450px] rounded-lg" />
-              <div className="flex flex-col justify-between gap-10">
-                <div>
-                  <Text variant="h6-regular" className="mb-2">
-                    {item.category}
-                  </Text>
-                  <Text variant="h4-medium">{item.title}</Text>
-                </div>
-                <div className="flex justify-end">
-                  <Button
-                    variant="circle"
-                    icon={<ArrowOutward className="w-6 h-6 text-white" />}
-                  />
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
-      ))}
+            )}
+          </div>
+        ))}
+      </div>
+
+      {/* Mobile */}
+      <div className="block md:hidden">
+        {PROJECT.map(item => (
+          <div key={item.id} className="py-8 border-b border-grey-light">
+            <img src={item.banner} className="w-full rounded-lg mb-8" />
+
+            <Text variant="h6-regular" className="mb-4">
+              {item.category}
+            </Text>
+            <Text variant="h4-regular">{item.title}</Text>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

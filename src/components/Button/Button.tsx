@@ -8,11 +8,12 @@ import Text from "../Text";
 
 type ButtonVariant = "simple" | "circle";
 
-type CircleSizeVariant = "large" | "small";
+type CircleSizeVariant = "large" | "small" | "xsmall";
 
 const CIRCLE_SIZE = {
   large: "w-[130px] h-[130px]",
-  small: "w-[90px] h-[90px]"
+  small: "w-[90px] h-[90px]",
+  xsmall: "w-[56px] h-[56px]"
 };
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {

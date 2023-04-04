@@ -60,7 +60,7 @@ const Testimoni = () => {
     <div className="mb-[80px]">
       <div className="flex justify-between items-center mb-12">
         <Text variant="h4-medium">Testimoni</Text>
-        <div className="flex items-center gap-4">
+        <div className="hidden md:flex items-center gap-4">
           <Button
             variant="circle"
             className="w-[96px] h-[96px]"
@@ -77,9 +77,9 @@ const Testimoni = () => {
           />
         </div>
       </div>
-      <div className="border border-grey-light rounded-3xl p-[56px]">
+      <div className="border border-grey-light rounded-3xl p-5 md:p-[56px]">
         <div className="flex gap-[62px]">
-          <div className="w-[200px] flex-shrink-0">
+          <div className="hidden md:block w-[200px] flex-shrink-0">
             <img
               src={`/images/illustrations/${selectedTestimoni.image}`}
               className="w-full"
@@ -101,6 +101,23 @@ const Testimoni = () => {
             <Text variant="h3-regular">{selectedTestimoni.description}</Text>
           </div>
         </div>
+      </div>
+
+      <div className="flex md:hidden items-center gap-4 mt-10">
+        <Button
+          variant="circle"
+          className="w-[96px] h-[96px]"
+          icon={<ArrowLeft className="text-white w-6 h-6" />}
+          sizeCircle="small"
+          onClick={handlePrev}
+        />
+        <Button
+          variant="circle"
+          className="w-[96px] h-[96px]"
+          icon={<ArrowRight className="text-white w-6 h-6" />}
+          sizeCircle="small"
+          onClick={handleNext}
+        />
       </div>
     </div>
   );

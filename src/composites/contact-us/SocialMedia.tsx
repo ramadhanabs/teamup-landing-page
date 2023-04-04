@@ -37,18 +37,18 @@ const SocialMedia = () => {
         Still curious about us?
       </Text>
 
-      <div className="grid grid-cols-2 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         {SOCIAL_MEDIA.map(item => (
           <div className="p-8 border border-grey-light rounded-3xl flex items-end justify-between" key={item.title}>
             <div>
               <img
                 src={`/images/icons/${item.icon}`}
-                className="w-[80px] mb-10"
+                className="w-[80px] mb-10 text-right md:text-left"
               />
               <Text variant="h4-semibold">{item.title}</Text>
               <Text variant="h6-regular">{item.description}</Text>
             </div>
-            <div>
+            <div className="hidden md:block">
               <Button
                 variant="circle"
                 icon={<ArrowOutward className="w-6 h-6 text-white" />}

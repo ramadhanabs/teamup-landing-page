@@ -39,12 +39,12 @@ const PricingPlan = () => {
   const [selectedButton, setSelectedButton] = useState<CurrencyType>("usd");
   return (
     <div className="mb-[80px]">
-      <div className="flex justify-between items-center mb-10">
+      <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-10">
         <Text variant="h4-medium">Pricing Plan</Text>
         <div className="flex items-center gap-4">
           <Button
             className={twMerge(
-              "rounded-full flex justify-center items-center py-3 w-[150px] border border-grey-light",
+              "rounded-full flex justify-center items-center py-3 px-8 md:w-[150px] border border-grey-light",
               selectedButton === "usd" && SELECTED_BUTTON_STYLE
             )}
             onClick={() => setSelectedButton("usd")}
@@ -53,7 +53,7 @@ const PricingPlan = () => {
           </Button>
           <Button
             className={twMerge(
-              "rounded-full flex justify-center items-center py-3 w-[150px] border border-grey-light",
+              "rounded-full flex justify-center items-center py-3 px-8 md:w-[150px] border border-grey-light",
               selectedButton === "sgd" && SELECTED_BUTTON_STYLE
             )}
             onClick={() => setSelectedButton("sgd")}
@@ -62,7 +62,7 @@ const PricingPlan = () => {
           </Button>
           <Button
             className={twMerge(
-              "rounded-full flex justify-center items-center py-3 w-[150px] border border-grey-light",
+              "rounded-full flex justify-center items-center py-3 px-8 md:w-[150px] border border-grey-light",
               selectedButton === "idr" && SELECTED_BUTTON_STYLE
             )}
             onClick={() => setSelectedButton("idr")}
@@ -72,7 +72,7 @@ const PricingPlan = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-3 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
         {PRICING_PLAN.map(plan => (
           <div
             className="border border-grey-light rounded-2xl p-8"

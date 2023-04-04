@@ -3,7 +3,7 @@ import Text from "@/components/Text";
 
 const TopSide = () => {
   return (
-    <div className="grid grid-cols-2 gap-10">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
       <div>
         <Text variant="h2-medium" className="mb-10">
           Get to know our

@@ -176,15 +176,15 @@ const TeamMember = () => {
   return (
     <div>
       {/* Team Geng */}
-      <div className="grid grid-cols-12 gap-10 mb-[100px]">
-        <div className="col-span-3">
+      <div className="grid grid-cols-12 md:gap-10 mb-[100px]">
+        <div className="col-span-12 md:col-span-3">
           <Text variant="h5-medium" className="mb-1">
             Team Geng
           </Text>
           <Text variant="p-regular">Our Founder & Co-Founder</Text>
         </div>
-        <div className="col-span-9">
-          <div className="grid grid-cols-3 gap-10">
+        <div className="col-span-12 md:col-span-9">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-10">
             {TEAM_GENG.map(member => (
               <div key={member.id}>
                 <div
@@ -192,12 +192,10 @@ const TeamMember = () => {
                   onMouseEnter={() => onMouseEnter(member.id)}
                   onMouseLeave={onMouseLeave}
                 >
-                  <Image
+                  <img
                     src={`/images/team-member/${member.image}.png`}
-                    width={290}
-                    height={290}
                     alt={`member-${member.id}`}
-                    className="mb-6"
+                    className="mb-6 w-full md:w-[290px]"
                   />
 
                   <Transition
@@ -231,15 +229,15 @@ const TeamMember = () => {
       </div>
 
       {/* Team Mates */}
-      <div className="grid grid-cols-12 gap-10 mb-[100px]">
-        <div className="col-span-3">
+      <div className="grid grid-cols-12 md:gap-10 mb-[100px]">
+        <div className="col-span-12 md:col-span-3">
           <Text variant="h5-medium" className="mb-1">
             Team Mates
           </Text>
           <Text variant="p-regular">Our main performer</Text>
         </div>
-        <div className="col-span-9">
-          <div className="grid grid-cols-3 gap-10">
+        <div className="col-span-12 md:col-span-9">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-10">
             {TEAM_MATES.map(member => (
               <div key={member.id}>
                 <div className="relative">
@@ -260,18 +258,18 @@ const TeamMember = () => {
       </div>
 
       {/* Partner */}
-      <div className="grid grid-cols-12 gap-10 mb-[100px]">
-        <div className="col-span-3">
+      <div className="grid grid-cols-12 md:gap-10 mb-[100px]">
+        <div className="col-span-12 md:col-span-3">
           <Text variant="h5-medium" className="mb-1">
             Partner
           </Text>
           <Text variant="p-regular">Our business partner</Text>
         </div>
-        <div className="col-span-9">
+        <div className="col-span-12 md:col-span-9">
           <div className="grid grid-cols-2">
             {PARTNER.map(item => (
               <div
-                className="flex items-end py-10 gap-10 border-b border-grey-light"
+                className="flex flex-col md:flex-row md:items-end py-10 gap-4 md:gap-10 border-b border-grey-light"
                 key={item.id}
               >
                 <Image
@@ -286,7 +284,7 @@ const TeamMember = () => {
                 </div>
               </div>
             ))}
-            <div className="flex items-end py-10 gap-10 border-b border-grey-light">
+            <div className="flex flex-col md:flex-row md:items-end py-10 gap-4 md:gap-10 border-b border-grey-light">
               <Button
                 variant="circle"
                 icon={<ArrowOutward className="w-6 h-6 text-white" />}
@@ -301,25 +299,24 @@ const TeamMember = () => {
       </div>
 
       {/* Freelancer */}
-      <div className="grid grid-cols-12 gap-10 mb-[100px]">
-        <div className="col-span-3">
+      <div className="grid grid-cols-12 md:gap-10 mb-[100px]">
+        <div className="col-span-12 md:col-span-3">
           <Text variant="h5-medium" className="mb-1">
             Freelancer
           </Text>
           <Text variant="p-regular">Our professional team</Text>
         </div>
-        <div className="col-span-9">
+        <div className="col-span-12 md:col-span-9">
           <div className="grid grid-cols-2">
             {FREELANCER.map(item => (
               <div
-                className="flex items-end py-10 gap-10 border-b border-grey-light"
+                className="flex flex-col md:flex-row md:items-end py-10 gap-4 md:gap-10 border-b border-grey-light"
                 key={item.id}
               >
-                <Image
+                <img
                   src={`/images/team-member/freelancer.png`}
                   alt=""
-                  width={130}
-                  height={130}
+                  className="w-[130px]"
                 />
                 <div>
                   <Text variant="h6-semibold">{item.name}</Text>
@@ -327,7 +324,7 @@ const TeamMember = () => {
                 </div>
               </div>
             ))}
-            <div className="flex items-end py-10 gap-10 border-b border-grey-light">
+            <div className="flex flex-col md:flex-row md:items-end py-10 gap-4 md:gap-10 border-b border-grey-light">
               <Button
                 variant="circle"
                 icon={<ArrowOutward className="w-6 h-6 text-white" />}

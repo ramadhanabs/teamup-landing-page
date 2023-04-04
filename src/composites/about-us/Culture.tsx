@@ -37,10 +37,10 @@ const Culture = () => {
 
       {CULTURE.map(item => (
         <div
-          className="flex justify-between items-center py-10 gap-10 border-b border-grey-light"
+          className="flex flex-col md:flex-row md:justify-between md:items-center py-10 gap-10 border-b border-grey-light"
           key={item.id}
         >
-          <div className="flex items-center gap-10">
+          <div className="flex flex-col md:flex-row md:items-center gap-10">
             <img
               src={`/images/illustrations/${item.id}.svg`}
               alt=""

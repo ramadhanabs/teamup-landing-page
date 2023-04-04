@@ -10,7 +10,7 @@ const Collaboration = () => {
         We also open for other collaboration
       </Text>
 
-      <div className="border-b border-grey-light py-12 flex justify-between gap-10">
+      <div className="border-b border-grey-light py-12 flex flex-col md:flex-row md:justify-between gap-10">
         <img
           src="/images/illustrations/partnership.svg"
           className="w-[152px]"
@@ -25,14 +25,14 @@ const Collaboration = () => {
             further together to achieve our respective business goals.
           </Text>
         </div>
-        <div className="shrink-0">
+        <div className="shrink-0 flex justify-end md:justify-start">
           <Button
             variant="circle"
             icon={<ArrowOutward className="w-6 h-6 text-white" />}
           />
         </div>
       </div>
-      <div className="border-b border-grey-light py-12 flex justify-between gap-10">
+      <div className="border-b border-grey-light py-12 flex flex-col md:flex-row md:justify-between gap-10">
         <img src="/images/illustrations/freelancer.svg" className="w-[152px]" />
         <div>
           <Text variant="h1-regular" className="mb-6">
@@ -45,7 +45,7 @@ const Collaboration = () => {
             better ecosystem.
           </Text>
         </div>
-        <div className="shrink-0">
+        <div className="shrink-0 flex justify-end md:justify-start">
           <Button
             variant="circle"
             icon={<ArrowOutward className="w-6 h-6 text-white" />}
