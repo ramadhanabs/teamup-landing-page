@@ -44,21 +44,25 @@ const OurExpertise = () => {
   return (
     <div className="mb-[80px]">
       <Text variant="h4-medium">Our Expertise</Text>
-      {EXPERTISE.map(item => (
-        <div
-          key={item.id}
-          className="flex flex-col md:flex-row md:items-center justify-between border-b border-grey-light py-10"
-        >
-          <div className="flex flex-col md:flex-row md:items-center gap-10">
-            <img
-              src={`/images/illustrations/${item.id}.png`}
-              className="w-[80px]"
-            />
-            <Text variant="h2-regular">{item.title}</Text>
+      <div className="grid grid-cols-2 lg:grid-cols-1 gap-6">
+        {EXPERTISE.map(item => (
+          <div
+            key={item.id}
+            className="flex flex-col lg:flex-row lg:items-center justify-between border-b border-grey-light py-8 lg:py-10"
+          >
+            <div className="flex flex-col lg:flex-row lg:items-center gap-10">
+              <img
+                src={`/images/illustrations/${item.id}.png`}
+                className="w-[80px]"
+              />
+              <Text variant="h2-regular">{item.title}</Text>
+            </div>
+            <Text variant="p-regular" className="max-w-[500px]">
+              {item.description}
+            </Text>
           </div>
-          <Text variant="p-regular" className="max-w-[500px]">{item.description}</Text>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };

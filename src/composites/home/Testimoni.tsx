@@ -58,9 +58,9 @@ const Testimoni = () => {
 
   return (
     <div className="mb-[80px]">
-      <div className="flex justify-between items-center mb-12">
+      <div className="flex justify-between items-center mb-6 sm:mb-12">
         <Text variant="h4-medium">Testimoni</Text>
-        <div className="hidden md:flex items-center gap-4">
+        <div className="hidden sm:flex items-center gap-4">
           <Button
             variant="circle"
             className="w-[96px] h-[96px]"
@@ -77,9 +77,9 @@ const Testimoni = () => {
           />
         </div>
       </div>
-      <div className="border border-grey-light rounded-3xl p-5 md:p-[56px]">
+      <div className="border border-grey-light rounded-3xl p-5 lg:p-[56px]">
         <div className="flex gap-[62px]">
-          <div className="hidden md:block w-[200px] flex-shrink-0">
+          <div className="hidden lg:block w-[200px] flex-shrink-0">
             <img
               src={`/images/illustrations/${selectedTestimoni.image}`}
               className="w-full"
@@ -87,23 +87,29 @@ const Testimoni = () => {
           </div>
           <div>
             <div className="flex items-center gap-4 mb-6">
-              <div className="rounded-full bg-white px-6 py-4">
-                <p className="text-black font-bold">
+              <div className="rounded-full bg-white py-3 px-4 sm:px-6 sm:py-4">
+                <Text
+                  variant="s-semibold"
+                  className="text-black whitespace-nowrap"
+                >
                   Rating {selectedTestimoni.rating}
-                </p>
+                </Text>
               </div>
-              <div className="rounded-full border border-white px-6 py-4">
-                <p className="text-white font-bold">
+              <div className="rounded-full border border-white py-3 px-4 sm:px-6 sm:py-4">
+                <Text
+                  variant="s-semibold"
+                  className="text-white whitespace-nowrap"
+                >
                   {selectedTestimoni.source}
-                </p>
+                </Text>
               </div>
             </div>
-            <Text variant="h3-regular">{selectedTestimoni.description}</Text>
+            <Text variant="h4-regular">{selectedTestimoni.description}</Text>
           </div>
         </div>
       </div>
 
-      <div className="flex md:hidden items-center gap-4 mt-10">
+      <div className="flex sm:hidden items-center gap-4 mt-10">
         <Button
           variant="circle"
           className="w-[96px] h-[96px]"

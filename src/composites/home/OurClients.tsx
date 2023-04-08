@@ -14,11 +14,11 @@ const CLIENTS = [
 
 const OurClients = () => {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-10 my-[80px]">
+    <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 lg:gap-10 my-12 lg:my-[80px]">
       {CLIENTS.map(name => {
         if (name === "others") {
           return (
-            <div className="border border-grey-light flex items-center justify-center rounded-lg w-full h-full md:w-[290px] md:h-[160px]" key={name}>
+            <div className="border border-grey-light flex items-center justify-center rounded-lg w-full h-full lg:w-[290px] lg:h-[160px]" key={name}>
               <Text variant="p-regular">
                 And dozen of
                 <br />
@@ -30,9 +30,9 @@ const OurClients = () => {
         return (
           <div
             key={name}
-            className="border border-grey-light flex items-center justify-center rounded-lg w-full h-full md:w-[290px] md:h-[160px]"
+            className="border border-grey-light flex items-center justify-center rounded-lg w-full h-full lg:w-[290px] lg:h-[160px]"
           >
-            <img src={`/images/logo/logo-${name}.png`} className="w-[120px] md:w-[190px]" />
+            <img src={`/images/logo/logo-${name}.png`} className="w-[120px] lg:w-[190px]" />
           </div>
         );
       })}

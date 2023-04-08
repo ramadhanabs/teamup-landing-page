@@ -3,7 +3,7 @@ import Text from "@/components/Text";
 
 const TopSide = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
       <div>
         <Text variant="h2-medium" className="mb-10">
           Get to know our
@@ -14,10 +14,10 @@ const TopSide = () => {
       </div>
       <div>
         <div className="flex items-center gap-4 mb-10">
-          <div className="rounded-full bg-white px-6 py-4">
+          <div className="rounded-full bg-white px-4 py-3 lg:px-6 lg:py-4">
             <p className="text-black font-bold">Born at Surabaya</p>
           </div>
-          <div className="rounded-full border border-white px-6 py-4">
+          <div className="rounded-full border border-white px-4 py-3 lg:px-6 lg:py-4">
             <p className="text-white">Since 2019</p>
           </div>
         </div>

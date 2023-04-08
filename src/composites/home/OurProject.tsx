@@ -51,7 +51,7 @@ const OurProject = () => {
     <div className="mb-[80px]">
       <Text variant="h4-medium">Our Project</Text>
       {/* Desktop */}
-      <div className="hidden md:block">
+      <div className="hidden lg:block">
         {PROJECT.map(item => (
           <div className="py-10 border-b border-grey-light" key={item.id}>
             {item.isThumbnail ? (
@@ -105,7 +105,7 @@ const OurProject = () => {
       </div>
 
       {/* Mobile */}
-      <div className="block md:hidden">
+      <div className="lg:hidden grid grid-cols-1 sm:grid-cols-2 sm:gap-6">
         {PROJECT.map(item => (
           <div key={item.id} className="py-8 border-b border-grey-light">
             <img src={item.banner} className="w-full rounded-lg mb-8" />
