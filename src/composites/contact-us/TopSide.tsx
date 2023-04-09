@@ -33,7 +33,7 @@ const TopSide = () => {
         </Text>
         <div className="border-y border-grey-light py-6 flex items-center w-full justify-between">
           <div className="flex flex-col lg:flex-row lg:items-center gap-6">
-            <img src="/images/illustrations/call.png" className="w-[68px]" />
+            <img src="/images/illustrations/call.svg" className="w-[68px]" />
             <div>
               <Text variant="h6-medium">Phone</Text>
               <Text variant="h5-regular">0989787393</Text>
@@ -47,7 +47,7 @@ const TopSide = () => {
         </div>
         <div className="border-y border-grey-light py-6 flex items-center w-full justify-between">
           <div className="flex flex-col lg:flex-row lg:items-center gap-6">
-            <img src="/images/illustrations/email.png" className="w-[68px]" />
+            <img src="/images/illustrations/email.svg" className="w-[68px]" />
             <div>
               <Text variant="h6-medium">Email</Text>
               <Text variant="h5-regular">hello@teamup.com</Text>

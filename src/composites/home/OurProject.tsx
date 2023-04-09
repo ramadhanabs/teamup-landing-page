@@ -7,9 +7,9 @@ const PROJECT = [
   {
     id: "01",
     category: "UI/UX Design",
-    title: "Encourage kids to grow and explore their interest with",
+    title: "YDSF - Designing Zakat Charity App and Dashboard",
     description:
-      "We were trusted to design a Company website for Singapore Startup about service to help user protect their fund. We design about service to help user protect their fund.",
+      "We create a user-friendly app that helps charitable organizations connect with potential donors and volunteers. It will allow users to browse a variety of charities to make donations.",
     href: "/#",
     banner: "/images/project-1.png",
     isThumbnail: true
@@ -17,7 +17,7 @@ const PROJECT = [
   {
     id: "02",
     category: "UI/UX Design",
-    title: "Encourage kids to grow and explore their interest with",
+    title: "PT Pelindo - User Interface Redesign of Company Profile",
     description:
       "We were trusted to design a Company website for Singapore Startup about service to help user protect their fund. We design about service to help user protect their fund.",
     href: "/#",
@@ -26,8 +26,8 @@ const PROJECT = [
   },
   {
     id: "03",
-    category: "UI/UX Design",
-    title: "Encourage kids to grow and explore their interest with",
+    category: "Illustration",
+    title: "Pandai - Creating Mascot Illustration for Edutech Product",
     description:
       "We were trusted to design a Company website for Singapore Startup about service to help user protect their fund. We design about service to help user protect their fund.",
     href: "/#",
@@ -36,8 +36,8 @@ const PROJECT = [
   },
   {
     id: "04",
-    category: "UI/UX Design",
-    title: "Encourage kids to grow and explore their interest with",
+    category: "Brand Identity",
+    title: "Creating Brand Identity of Tribes by HHWT, a Donation Platform",
     description:
       "We were trusted to design a Company website for Singapore Startup about service to help user protect their fund. We design about service to help user protect their fund.",
     href: "/#",
