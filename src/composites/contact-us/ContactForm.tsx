@@ -1,10 +1,12 @@
 import Button from "@/components/Button";
 import { ArrowOutward } from "@/components/Icons";
 import Text from "@/components/Text";
+import { sendContactForm } from "@/lib/api";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "react-hot-toast";
 
-interface FormValues {
+export interface FormValues {
   name: string;
   email: string;
   phone: string;
@@ -20,7 +22,22 @@ const ContactForm = () => {
     watch,
     formState: { errors }
   } = useForm<FormValues>();
-  const onSubmit = (data: FormValues) => console.log(data);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const onSubmit = async (data: FormValues) => {
+    try {
+      setIsLoading(true);
+      const res = await sendContactForm(data);
+      if (res.status === 200) {
+        toast.success("Success Sending Message");
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error("Failed Sending Message");
+    } finally {
+      setIsLoading(false);
+    }
+  };
   const descriptionLength = watch("project_description", "").length;
 
   return (
@@ -41,9 +58,14 @@ const ContactForm = () => {
               <input
                 className="text-white text-[20px] w-full font-light"
                 placeholder="Place your name here..."
-                {...register("name")}
+                {...register("name", { required: true })}
               />
             </div>
+            {errors.name?.type === "required" && (
+              <Text variant="s-regular" className="text-red-500 mt-3">
+                Name is required
+              </Text>
+            )}
           </div>
         </div>
         <div className="flex gap-10 mb-10">
@@ -59,9 +81,14 @@ const ContactForm = () => {
                 type="email"
                 className="text-white text-[20px] w-full font-light"
                 placeholder="Place your email here..."
-                {...register("email")}
+                {...register("email", { required: true })}
               />
             </div>
+            {errors.email?.type === "required" && (
+              <Text variant="s-regular" className="text-red-500 mt-3">
+                Email is required
+              </Text>
+            )}
           </div>
         </div>
         <div className="flex gap-10 mb-10">
@@ -77,9 +104,14 @@ const ContactForm = () => {
                 type="number"
                 className="text-white text-[20px] w-full font-light"
                 placeholder="Place your phone number here..."
-                {...register("phone")}
+                {...register("phone", { required: true })}
               />
             </div>
+            {errors.name?.type === "required" && (
+              <Text variant="s-regular" className="text-red-500 mt-3">
+                Phone is required
+              </Text>
+            )}
           </div>
         </div>
         <div className="flex gap-10 mb-10">
@@ -154,6 +186,7 @@ const ContactForm = () => {
                 className="rounded-full bg-purple py-5 px-6"
                 icon={<ArrowOutward className="w-6 h-6 text-white" />}
                 type="submit"
+                isLoading={isLoading}
               >
                 Send Message
               </Button>
