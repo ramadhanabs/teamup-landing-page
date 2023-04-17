@@ -4,6 +4,7 @@ import Text from "@/components/Text";
 import React from "react";
 
 const Collaboration = () => {
+  const handleClickButton = (url: string) => window.open(url, "_blank");
   return (
     <div className="mt-[120px]">
       <Text variant="h4-semibold" className="mb-12">
@@ -29,6 +30,9 @@ const Collaboration = () => {
           <Button
             variant="circle"
             icon={<ArrowOutward className="w-6 h-6 text-white" />}
+            onClick={() =>
+              handleClickButton("https://forms.gle/y8seh8JgkjXZbMaX6")
+            }
           />
         </div>
       </div>
@@ -49,6 +53,9 @@ const Collaboration = () => {
           <Button
             variant="circle"
             icon={<ArrowOutward className="w-6 h-6 text-white" />}
+            onClick={() =>
+              handleClickButton("https://forms.gle/sCmDEMds8Bjyi8VP6")
+            }
           />
         </div>
       </div>
