@@ -105,21 +105,33 @@ const TEAM_MATES = [
 const PARTNER = [
   {
     id: 1,
-    name: "Boltshift",
-    company: "Company Name",
-    image: "company-1"
+    name: "Troya Digital Mesail",
+    company: "Digital Agency",
+    image: "tr"
   },
   {
     id: 2,
-    name: "Nietzche",
-    company: "Company Name",
-    image: "company-2"
+    name: "Oren Media Kreasi",
+    company: "Creative Consulting Agency",
+    image: "or"
   },
   {
     id: 3,
-    name: "Nietzche",
-    company: "Company Name",
-    image: "company-3"
+    name: "HJ Corporate",
+    company: "Software House",
+    image: "hj"
+  },
+  {
+    id: 4,
+    name: "Deka Insight",
+    company: "Bussiness Consulting Agency",
+    image: "de"
+  },
+  {
+    id: 5,
+    name: "Symbolic ID",
+    company: "Management Platform",
+    image: "sy"
   }
 ];
 
@@ -128,43 +140,43 @@ const FREELANCER = [
     id: 1,
     name: "Dhimas Aji",
     role: "UI/UX Designer",
-    image: ""
+    image: "dhimas-aji"
   },
   {
     id: 2,
     name: "M Yasin Abdul",
     role: "UI/UX Designer",
-    image: ""
+    image: "yasin-abdul"
   },
-  {
-    id: 3,
-    name: "Aryo Romadhon",
-    role: "UI/UX Designer",
-    image: ""
-  },
-  {
-    id: 4,
-    name: "Talensta Mellandika",
-    role: "Illustrator",
-    image: ""
-  },
+  // {
+  //   id: 3,
+  //   name: "Aryo Romadhon",
+  //   role: "UI/UX Designer",
+  //   image: ""
+  // },
+  // {
+  //   id: 4,
+  //   name: "Talensta Mellandika",
+  //   role: "Illustrator",
+  //   image: ""
+  // },
   {
     id: 5,
     name: "Ramadhana Bagus",
     role: "Mobile Developer",
-    image: ""
+    image: "ramadhana-bagus"
   },
   {
     id: 6,
     name: "Rizal Avib",
     role: "Graphic Designer",
-    image: ""
+    image: "rizal-avib"
   },
   {
     id: 7,
     name: "Riris Septi Arimbi",
     role: "Digital Marketing",
-    image: ""
+    image: "riris-septi"
   }
 ];
 
@@ -314,7 +326,7 @@ const TeamMember = () => {
                 key={item.id}
               >
                 <img
-                  src={`/images/team-member/freelancer.png`}
+                  src={`/images/team-member/${item.image}.png`}
                   alt=""
                   className="w-[130px]"
                 />
