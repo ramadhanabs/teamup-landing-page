@@ -7,7 +7,7 @@ const AppLayout = (props: PropsWithChildren) => {
   return (
     <>
       <Header />
-      {children}
+      <div className="mt-[120px] md:mt-[160px]">{children}</div>
       <Footer />
     </>
   );

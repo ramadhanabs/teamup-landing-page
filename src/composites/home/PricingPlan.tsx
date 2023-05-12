@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import Text from "@/components/Text";
 import Button from "@/components/Button";
 import { twMerge } from "tailwind-merge";
@@ -15,7 +15,8 @@ const PRICING_PLAN = [
     subtitle: "Start from USD 50/design",
     description:
       "Suitable for a project who already had fixed brief. Ready to execute based on the requirement.",
-    href: "/#"
+    href: "/#",
+    type: "project"
   },
   {
     id: "pricing-plan-2",
@@ -23,7 +24,8 @@ const PRICING_PLAN = [
     subtitle: "Start from USD 15/hour",
     description:
       "Suitable for a project which need hour token, it can drive in daily, weekly, and monthly. ",
-    href: "/#"
+    href: "/#",
+    type: "talent"
   },
   {
     id: "pricing-plan-3",
@@ -31,14 +33,45 @@ const PRICING_PLAN = [
     subtitle: "Start from USD 1.200/month",
     description:
       "Suitable for a project which still doesn’t have a fixed brief and needs a team to dig more. ",
-    href: "/#"
+    href: "/#",
+    type: "team"
   }
 ];
 
+const PRICELIST_USD = {
+  project: "USD 50",
+  talent: "USD 15",
+  team: "USD 900",
+  url: "https://drive.google.com/file/d/1Lj20U4qr8VWTTh-T-pTLIJYedeV0fvza/view"
+};
+
+const PRICELIST_SGD = {
+  project: "SGD 50",
+  talent: "SGD 15",
+  team: "SGD 900",
+  url: "https://drive.google.com/file/d/1zvWh5xQof4d0hbrTgoJs-vJnvlC6fF0F/view"
+};
+
+const PRICELIST_IDR = {
+  project: "IDR 500.000",
+  talent: "IDR 150.000",
+  team: "IDR 9 MIO",
+  url: "https://drive.google.com/file/d/1oDBvYNOZUxUjH4CWXbreoap_cdkxuwMM/view"
+};
+
 const PricingPlan = () => {
   const [selectedButton, setSelectedButton] = useState<CurrencyType>("usd");
+
+  const pricing = useMemo(() => {
+    if (selectedButton === "usd") return PRICELIST_USD;
+    if (selectedButton === "sgd") return PRICELIST_SGD;
+    return PRICELIST_IDR;
+  }, [selectedButton]);
+
+  const handleClickButton = (url: string) => window.open(url, "_blank");
+
   return (
-    <div className="mb-[80px]">
+    <div className="pt-10 mb-[80px]" id="pricing">
       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-8 sm:mb-10">
         <Text variant="h4-medium" className="mb-4 sm:mb-0">
           Pricing Plan
@@ -87,7 +120,7 @@ const PricingPlan = () => {
               />
               <Text variant="h5-semibold">{plan.title}</Text>
               <Text variant="p-medium" className="text-tosca mb-6">
-                {plan.subtitle}
+                Start from {pricing[plan.type]}
               </Text>
               <Text variant="p-regular" className="mb-6 sm:mb-10">
                 {plan.description}
@@ -96,8 +129,9 @@ const PricingPlan = () => {
                 className="w-full sm:w-max py-5 px-6 bg-white"
                 icon={<ArrowOutward className="w-6 h-6 text-black" />}
                 isTextBlack
+                onClick={()=>handleClickButton(pricing.url)}
               >
-                Get Started
+                See More
               </Button>
             </div>
           ))}

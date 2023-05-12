@@ -5,7 +5,7 @@ import React from "react";
 const Footer = () => {
   return (
     <footer>
-      <Container className="grid grid-cols-1 lg:grid-cols-3 pt-[90px] pb-8 gap-10">
+      <Container className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 pb-8 gap-10">
         <div>
           <Text variant="p-semibold" className="mb-4">
             TeamUp Agency
@@ -29,18 +29,18 @@ const Footer = () => {
             Connect with us
           </Text>
           <div className="flex items-center gap-4">
-            <button>
+            <a href="https://m.facebook.com/profile.php?id=100039970459753">
               <img src="/images/icons/facebook.svg" className="w-[48px]" />
-            </button>
-            <button>
+            </a>
+            <a href="https://dribbble.com/sunnydayatteamup">
               <img src="/images/icons/behance.svg" className="w-[48px]" />
-            </button>
-            <button>
+            </a>
+            <a href="https://www.instagram.com/teamupagency.id/">
               <img src="/images/icons/instagram.svg" className="w-[48px]" />
-            </button>
-            <button>
+            </a>
+            <a href="https://dribbble.com/sunnydayatteamup">
               <img src="/images/icons/dribbble.svg" className="w-[48px]" />
-            </button>
+            </a>
           </div>
         </div>
       </Container>

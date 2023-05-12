@@ -8,29 +8,30 @@ const SOCIAL_MEDIA = [
     title: "Behance",
     description: "Our project portfolio",
     icon: "behance-color.svg",
-    href: "/#"
+    href: "https://www.behance.net/teamupagency"
   },
   {
     title: "Dribbble",
     description: "Our design exploration",
     icon: "dribbble-color.svg",
-    href: "/#"
+    href: "https://dribbble.com/sunnydayatteamup"
   },
   {
     title: "Instagram",
     description: "Our daily life at agency",
     icon: "instagram-color.svg",
-    href: "/#"
+    href: "https://www.instagram.com/teamupagency.id/"
   },
   {
     title: "UI8",
     description: "Our UI Kit and Assets",
     icon: "ui-8-color.svg",
-    href: "/#"
+    href: "https://www.ui8.net/teamup-studio/products"
   }
 ];
 
 const SocialMedia = () => {
+  const handleClickButton = (url: string) => window.open(url, "_blank");
   return (
     <div className="mt-[120px] mb-10">
       <Text variant="h4-semibold" className="mb-12">
@@ -52,6 +53,7 @@ const SocialMedia = () => {
               <Button
                 variant="circle"
                 icon={<ArrowOutward className="w-6 h-6 text-white" />}
+                onClick={()=>handleClickButton(item.href)}
               />
             </div>
           </div>

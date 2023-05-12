@@ -44,7 +44,7 @@ const OurExpertise = () => {
   return (
     <div className="mb-[80px]">
       <Text variant="h4-medium">Our Expertise</Text>
-      <div className="grid grid-cols-2 lg:grid-cols-1 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6">
         {EXPERTISE.map(item => (
           <div
             key={item.id}

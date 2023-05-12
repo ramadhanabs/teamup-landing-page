@@ -4,6 +4,8 @@ import Text from "@/components/Text";
 import React from "react";
 
 const TopSide = () => {
+  const handleClickButton = (url: string) => window.open(url, "_blank");
+  const handleSendEmail = () => window.location.href = "mailto:hello@teamup.com)";
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
       <div>
@@ -43,6 +45,11 @@ const TopSide = () => {
             variant="circle"
             icon={<ArrowOutward className="w-8 h-8 text-white" />}
             sizeCircle="small"
+            onClick={() =>
+              handleClickButton(
+                "https://api.whatsapp.com/send?phone=0989787393"
+              )
+            }
           />
         </div>
         <div className="border-y border-grey-light py-6 flex items-center w-full justify-between">
@@ -57,6 +64,7 @@ const TopSide = () => {
             variant="circle"
             icon={<ArrowOutward className="w-8 h-8 text-white" />}
             sizeCircle="small"
+            onClick={handleSendEmail}
           />
         </div>
       </div>

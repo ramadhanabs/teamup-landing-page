@@ -1,6 +1,7 @@
 import Button from "@/components/Button";
 import { ArrowOutward } from "@/components/Icons";
 import Text from "@/components/Text";
+import Link from "next/link";
 import React from "react";
 
 const PROJECT = [
@@ -10,7 +11,7 @@ const PROJECT = [
     title: "YDSF - Designing Zakat Charity App and Dashboard",
     description:
       "We create a user-friendly app that helps charitable organizations connect with potential donors and volunteers. It will allow users to browse a variety of charities to make donations.",
-    href: "/#",
+    href: "https://www.behance.net/gallery/159626675/YDSF-Zakat-Charity-App-and-Dashboard",
     banner: "/images/project-1.png",
     isThumbnail: true
   },
@@ -20,7 +21,7 @@ const PROJECT = [
     title: "PT Pelindo - User Interface Redesign of Company Profile",
     description:
       "We were trusted to design a Company website for Singapore Startup about service to help user protect their fund. We design about service to help user protect their fund.",
-    href: "/#",
+    href: "https://www.behance.net/gallery/158915391/PT-Pelindo-Landing-Page-Redesign",
     banner: "/images/project-2.png",
     isThumbnail: false
   },
@@ -30,7 +31,7 @@ const PROJECT = [
     title: "Pandai - Creating Mascot Illustration for Edutech Product",
     description:
       "We were trusted to design a Company website for Singapore Startup about service to help user protect their fund. We design about service to help user protect their fund.",
-    href: "/#",
+    href: "https://www.behance.net/gallery/159107743/Pandai-Edutech-Mascot-Illustration",
     banner: "/images/project-3.png",
     isThumbnail: false
   },
@@ -40,15 +41,18 @@ const PROJECT = [
     title: "Creating Brand Identity of Tribes by HHWT, a Donation Platform",
     description:
       "We were trusted to design a Company website for Singapore Startup about service to help user protect their fund. We design about service to help user protect their fund.",
-    href: "/#",
+    href: "https://www.behance.net/gallery/162956717/Tribes-by-HHWT-Brand-Identity",
     banner: "/images/project-4.png",
     isThumbnail: false
   }
 ];
 
 const OurProject = () => {
+  const handleRoute = (url: string) => {
+    document.location.href = url;
+  }
   return (
-    <div className="mb-[80px]">
+    <div className="pt-10 mb-[80px]" id="our-work">
       <Text variant="h4-medium">Our Project</Text>
       {/* Desktop */}
       <div className="hidden lg:block">
@@ -76,13 +80,16 @@ const OurProject = () => {
                     <Button
                       variant="circle"
                       icon={<ArrowOutward className="w-6 h-6 text-white" />}
+                      onClick={() => handleRoute(item.href)}
                     />
                   </div>
                 </div>
               </div>
             ) : (
               <div className="flex items-center gap-10">
-                <Text variant="h3-medium">{item.id}</Text>
+                <Link href={item.href} passHref={true}>
+                  <Text variant="h3-medium">{item.id}</Text>
+                </Link>
                 <img src={item.banner} className="w-[450px] rounded-lg" />
                 <div className="flex flex-col justify-between gap-10">
                   <div>
@@ -95,6 +102,7 @@ const OurProject = () => {
                     <Button
                       variant="circle"
                       icon={<ArrowOutward className="w-6 h-6 text-white" />}
+                      onClick={() => handleRoute(item.href)}
                     />
                   </div>
                 </div>

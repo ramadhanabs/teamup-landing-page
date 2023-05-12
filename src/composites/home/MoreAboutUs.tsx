@@ -1,6 +1,7 @@
 import Button from "@/components/Button";
 import { ArrowOutward } from "@/components/Icons";
 import Text from "@/components/Text";
+import Link from "next/link";
 import React from "react";
 
 const MoreAboutUs = () => {
@@ -18,12 +19,14 @@ const MoreAboutUs = () => {
           through end-to-end design services from identity, visual, to
           experience
         </Text>
-        <Button
-          className="px-6 py-5 bg-purple"
-          icon={<ArrowOutward className="w-6 h-6 text-white" />}
-        >
-          More About Us
-        </Button>
+        <Link href="/about-us">
+          <Button
+            className="px-6 py-5 bg-purple"
+            icon={<ArrowOutward className="w-6 h-6 text-white" />}
+          >
+            More About Us
+          </Button>
+        </Link>
       </div>
     </div>
   );

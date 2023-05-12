@@ -6,27 +6,27 @@ import React, { useMemo, useState } from "react";
 const TESTIMONI = [
   {
     id: "sg",
-    rating: "5.0",
-    source: "Founder Startup SG",
+    company: "Skilled",
+    source: "Singapore Startup",
     image: "testimoni-1.svg",
     description:
-      "TeamUp exceeded our expectations, delivering high-quality products on time and on budget. Highly recommend them for all your manufacturing needs."
+      "TeamUp was able to come up with various creative ideas ecompassing our company’s industry and target market within short period of time. Very accomodating in our design tweaks as well."
   },
   {
     id: "thai",
-    rating: "5.0",
-    source: "Founder Startup Thailand",
+    company: "Kandang Qurban",
+    source: "Indonesia Startup",
     image: "testimoni-2.svg",
     description:
-      "Their expert team has helped me increase my online presence and grow my customer base. I highly recommend Teamup Agency to any business looking to take it's digital marketing."
+      "I hired them to re-design my startup project last year, they give the best shot and great result with fresh idea. Happy to work with."
   },
   {
     id: "hawai",
-    rating: "5.0",
-    source: "Founder Startup Hawai",
+    company: "Rentique",
+    source: "Chinese Startup",
     image: "testimoni-3.svg",
     description:
-      "I have been working with Teamup Agency for the past year and I couldn't be happier with the results. From the very beginning, they took the time to understand my business needs."
+      "It was a great pleasure working with TeamUp during our recent UI project. Their designer is smart, responsible and easy to comunicate with. if you are also looking for UI Designer, I would strongly recommend TeamUp Studio."
   }
 ];
 
@@ -92,7 +92,7 @@ const Testimoni = () => {
                   variant="s-semibold"
                   className="text-black whitespace-nowrap"
                 >
-                  Rating {selectedTestimoni.rating}
+                  {selectedTestimoni.company}
                 </Text>
               </div>
               <div className="rounded-full border border-white py-3 px-4 sm:px-6 sm:py-4">

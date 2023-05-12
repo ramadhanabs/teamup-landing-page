@@ -5,6 +5,7 @@ import { sendContactForm } from "@/lib/api";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
+import { twMerge } from "tailwind-merge";
 
 export interface FormValues {
   name: string;
@@ -23,6 +24,7 @@ const ContactForm = () => {
     formState: { errors }
   } = useForm<FormValues>();
   const [isLoading, setIsLoading] = useState(false);
+  const [focusName, setFocusName] = useState("");
 
   const onSubmit = async (data: FormValues) => {
     try {
@@ -47,7 +49,13 @@ const ContactForm = () => {
       </Text>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="flex gap-10 mb-10">
-          <Text variant="h3-semibold" className="text-tosca hidden lg:block">
+          <Text
+            variant="h3-semibold"
+            className={twMerge(
+              "hidden lg:block",
+              focusName === "name" ? "text-tosca" : "text-white"
+            )}
+          >
             01
           </Text>
           <div className="w-full">
@@ -59,6 +67,8 @@ const ContactForm = () => {
                 className="text-white text-[20px] w-full font-light"
                 placeholder="Place your name here..."
                 {...register("name", { required: true })}
+                onFocus={() => setFocusName("name")}
+                onBlur={() => setFocusName("")}
               />
             </div>
             {errors.name?.type === "required" && (
@@ -69,7 +79,13 @@ const ContactForm = () => {
           </div>
         </div>
         <div className="flex gap-10 mb-10">
-          <Text variant="h3-semibold" className="text-white hidden lg:block">
+          <Text
+            variant="h3-semibold"
+            className={twMerge(
+              "hidden lg:block",
+              focusName === "email" ? "text-tosca" : "text-white"
+            )}
+          >
             02
           </Text>
           <div className="w-full">
@@ -82,6 +98,8 @@ const ContactForm = () => {
                 className="text-white text-[20px] w-full font-light"
                 placeholder="Place your email here..."
                 {...register("email", { required: true })}
+                onFocus={() => setFocusName("email")}
+                onBlur={() => setFocusName("")}
               />
             </div>
             {errors.email?.type === "required" && (
@@ -92,7 +110,13 @@ const ContactForm = () => {
           </div>
         </div>
         <div className="flex gap-10 mb-10">
-          <Text variant="h3-semibold" className="text-white hidden lg:block">
+          <Text
+            variant="h3-semibold"
+            className={twMerge(
+              "hidden lg:block",
+              focusName === "phone" ? "text-tosca" : "text-white"
+            )}
+          >
             03
           </Text>
           <div className="w-full">
@@ -105,6 +129,8 @@ const ContactForm = () => {
                 className="text-white text-[20px] w-full font-light"
                 placeholder="Place your phone number here..."
                 {...register("phone", { required: true })}
+                onFocus={() => setFocusName("phone")}
+                onBlur={() => setFocusName("")}
               />
             </div>
             {errors.name?.type === "required" && (
@@ -115,7 +141,13 @@ const ContactForm = () => {
           </div>
         </div>
         <div className="flex gap-10 mb-10">
-          <Text variant="h3-semibold" className="text-white hidden lg:block">
+          <Text
+            variant="h3-semibold"
+            className={twMerge(
+              "hidden lg:block",
+              focusName === "company" ? "text-tosca" : "text-white"
+            )}
+          >
             04
           </Text>
           <div className="w-full">
@@ -127,12 +159,20 @@ const ContactForm = () => {
                 className="text-white text-[20px] w-full font-light"
                 placeholder="Place your company name here..."
                 {...register("company")}
+                onFocus={() => setFocusName("company")}
+                onBlur={() => setFocusName("")}
               />
             </div>
           </div>
         </div>
         <div className="flex gap-10 mb-10">
-          <Text variant="h3-semibold" className="text-white hidden lg:block">
+          <Text
+            variant="h3-semibold"
+            className={twMerge(
+              "hidden lg:block",
+              focusName === "service" ? "text-tosca" : "text-white"
+            )}
+          >
             05
           </Text>
           <div className="w-full">
@@ -144,6 +184,8 @@ const ContactForm = () => {
                 <select
                   className="text-white text-[20px] w-full font-light cursor-pointer"
                   {...register("service")}
+                  onFocus={() => setFocusName("service")}
+                  onBlur={() => setFocusName("")}
                 >
                   <option>Select Option</option>
                   <option>Graphic Designer</option>
@@ -157,7 +199,13 @@ const ContactForm = () => {
           </div>
         </div>
         <div className="flex gap-10 mb-10">
-          <Text variant="h3-semibold" className="text-white hidden lg:block">
+          <Text
+            variant="h3-semibold"
+            className={twMerge(
+              "hidden lg:block",
+              focusName === "project_description" ? "text-tosca" : "text-white"
+            )}
+          >
             06
           </Text>
           <div className="w-full">
@@ -169,13 +217,15 @@ const ContactForm = () => {
                 className="text-white text-[20px] w-full font- light block"
                 rows={4}
                 placeholder="Place the description here..."
-                {...register("project_description", { maxLength: 100 })}
+                {...register("project_description", { maxLength: 500 })}
+                onFocus={() => setFocusName("project_description")}
+                onBlur={() => setFocusName("")}
               />
               <Text
                 className="absolute bottom-[12px] right-0"
                 variant="s-regular"
               >
-                {descriptionLength}/100
+                {descriptionLength}/500
               </Text>
             </div>
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mt-6 gap-6">
