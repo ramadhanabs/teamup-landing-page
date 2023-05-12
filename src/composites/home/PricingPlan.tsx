@@ -8,6 +8,10 @@ type CurrencyType = "usd" | "idr" | "sgd";
 
 const SELECTED_BUTTON_STYLE = "bg-[#6C77FF] border-0";
 
+interface PricingKey {
+  [key: string]: string
+}
+
 const PRICING_PLAN = [
   {
     id: "pricing-plan-1",
@@ -62,7 +66,7 @@ const PRICELIST_IDR = {
 const PricingPlan = () => {
   const [selectedButton, setSelectedButton] = useState<CurrencyType>("usd");
 
-  const pricing = useMemo(() => {
+  const pricing: PricingKey = useMemo(() => {
     if (selectedButton === "usd") return PRICELIST_USD;
     if (selectedButton === "sgd") return PRICELIST_SGD;
     return PRICELIST_IDR;
