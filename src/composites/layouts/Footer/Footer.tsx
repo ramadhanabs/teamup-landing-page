@@ -29,16 +29,22 @@ const Footer = () => {
             Connect with us
           </Text>
           <div className="flex items-center gap-4">
-            <a href="https://m.facebook.com/profile.php?id=100039970459753">
+            <a
+              href="https://m.facebook.com/profile.php?id=100039970459753"
+              target="_blank"
+            >
               <img src="/images/icons/facebook.svg" className="w-[48px]" />
             </a>
-            <a href="https://dribbble.com/sunnydayatteamup">
+            <a href="https://dribbble.com/sunnydayatteamup" target="_blank">
               <img src="/images/icons/behance.svg" className="w-[48px]" />
             </a>
-            <a href="https://www.instagram.com/teamupagency.id/">
+            <a
+              href="https://www.instagram.com/teamupagency.id/"
+              target="_blank"
+            >
               <img src="/images/icons/instagram.svg" className="w-[48px]" />
             </a>
-            <a href="https://dribbble.com/sunnydayatteamup">
+            <a href="https://dribbble.com/sunnydayatteamup" target="_blank">
               <img src="/images/icons/dribbble.svg" className="w-[48px]" />
             </a>
           </div>

@@ -21,10 +21,12 @@ const ContactForm = () => {
     register,
     handleSubmit,
     watch,
+    getValues,
     formState: { errors }
   } = useForm<FormValues>();
   const [isLoading, setIsLoading] = useState(false);
   const [focusName, setFocusName] = useState("");
+  const formValue = getValues()
 
   const onSubmit = async (data: FormValues) => {
     try {
@@ -53,7 +55,9 @@ const ContactForm = () => {
             variant="h3-semibold"
             className={twMerge(
               "hidden lg:block",
-              focusName === "name" ? "text-tosca" : "text-white"
+              focusName === "name" || formValue.name
+                ? "text-tosca"
+                : "text-white"
             )}
           >
             01
@@ -83,7 +87,9 @@ const ContactForm = () => {
             variant="h3-semibold"
             className={twMerge(
               "hidden lg:block",
-              focusName === "email" ? "text-tosca" : "text-white"
+              focusName === "email" || formValue.email
+                ? "text-tosca"
+                : "text-white"
             )}
           >
             02
@@ -114,7 +120,9 @@ const ContactForm = () => {
             variant="h3-semibold"
             className={twMerge(
               "hidden lg:block",
-              focusName === "phone" ? "text-tosca" : "text-white"
+              focusName === "phone" || formValue.phone
+                ? "text-tosca"
+                : "text-white"
             )}
           >
             03
@@ -145,7 +153,9 @@ const ContactForm = () => {
             variant="h3-semibold"
             className={twMerge(
               "hidden lg:block",
-              focusName === "company" ? "text-tosca" : "text-white"
+              focusName === "company" || formValue.company
+                ? "text-tosca"
+                : "text-white"
             )}
           >
             04
@@ -170,7 +180,9 @@ const ContactForm = () => {
             variant="h3-semibold"
             className={twMerge(
               "hidden lg:block",
-              focusName === "service" ? "text-tosca" : "text-white"
+              focusName === "service" || formValue.service
+                ? "text-tosca"
+                : "text-white"
             )}
           >
             05
@@ -183,12 +195,14 @@ const ContactForm = () => {
               <div className="relative">
                 <select
                   className="text-white text-[20px] w-full font-light cursor-pointer"
+                  placeholder="Select Option"
                   {...register("service")}
                   onFocus={() => setFocusName("service")}
                   onBlur={() => setFocusName("")}
                 >
-                  <option>Select Option</option>
                   <option>Graphic Designer</option>
+                  <option>Programmer</option>
+                  <option>Businessman</option>
                 </select>
                 <img
                   src="/images/icons/chevron-down.svg"
@@ -203,7 +217,9 @@ const ContactForm = () => {
             variant="h3-semibold"
             className={twMerge(
               "hidden lg:block",
-              focusName === "project_description" ? "text-tosca" : "text-white"
+              focusName === "project_description" || formValue.project_description
+                ? "text-tosca"
+                : "text-white"
             )}
           >
             06

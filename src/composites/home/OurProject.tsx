@@ -48,9 +48,7 @@ const PROJECT = [
 ];
 
 const OurProject = () => {
-  const handleRoute = (url: string) => {
-    document.location.href = url;
-  }
+  const handleClickButton = (url: string) => window.open(url, "_blank");
   return (
     <div className="pt-10 mb-[80px]" id="our-work">
       <Text variant="h4-medium">Our Project</Text>
@@ -80,7 +78,7 @@ const OurProject = () => {
                     <Button
                       variant="circle"
                       icon={<ArrowOutward className="w-6 h-6 text-white" />}
-                      onClick={() => handleRoute(item.href)}
+                      onClick={() => handleClickButton(item.href)}
                     />
                   </div>
                 </div>
@@ -102,7 +100,7 @@ const OurProject = () => {
                     <Button
                       variant="circle"
                       icon={<ArrowOutward className="w-6 h-6 text-white" />}
-                      onClick={() => handleRoute(item.href)}
+                      onClick={() => handleClickButton(item.href)}
                     />
                   </div>
                 </div>

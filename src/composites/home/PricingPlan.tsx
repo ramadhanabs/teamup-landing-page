@@ -59,7 +59,7 @@ const PRICELIST_SGD = {
 const PRICELIST_IDR = {
   project: "IDR 500.000",
   talent: "IDR 150.000",
-  team: "IDR 9 MIO",
+  team: "IDR 9.000.000",
   url: "https://drive.google.com/file/d/1oDBvYNOZUxUjH4CWXbreoap_cdkxuwMM/view"
 };
 
